@@ -21,3 +21,12 @@
   <input type="number" placeholder="baris" [(ngModel)]="kolomP2"/>
   <button (click)="attackP2(barisP2, kolomP2)">Place</button>
 </ng-template>
+
+<br/>
+<br/>
+<p>BOARD</p>
+<div *ngFor="let count of board">
+  <span *ngFor="let count2 of count">
+    {{count2}}
+  </span>
+</div>
