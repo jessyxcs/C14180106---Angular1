@@ -1,32 +1,34 @@
 <h1> Game </h1>
 
 <p>Player 1 = 1</p>
-<p>Player 2 = 2</p>
+<p>Player 2 = 0</p>
 
 <!-- PLAYER INPUT -->
 <ng-template *ngIf="turn; then templateP1; else templateP2"></ng-template>
 
 <ng-template #templateP1>
-  <br/>
-  <p> PLAYER 1 TURN </p>
-  <input type="number" placeholder="baris" [(ngModel)]="barisP1"/>
-  <input type="number" placeholder="kolom" [(ngModel)]="kolomP1"/>
-  <button (click)="attackP1(barisP1, kolomP1)">Place</button>
+	<br/>
+	<p> PLAYER 1 TURN </p>
+	<input type="number" placeholder="baris" [(ngModel)]="barisP1"/>
+	<input type="number" placeholder="kolom" [(ngModel)]="kolomP1"/>
+	<button (click)="attackP1(barisP1, kolomP1)">Place</button>
 </ng-template>
 
 <ng-template #templateP2>
-  <br/>
-  <p> PLAYER 2 TURN </p>
-  <input type="number" placeholder="baris" [(ngModel)]="barisP2"/>
-  <input type="number" placeholder="kolom" [(ngModel)]="kolomP2"/>
-  <button (click)="attackP2(barisP2, kolomP2)">Place</button>
+	<br/>
+	<p> PLAYER 2 TURN </p>
+	<input type="number" placeholder="baris" [(ngModel)]="barisP2"/>
+	<input type="number" placeholder="kolom" [(ngModel)]="kolomP2"/>
+	<button (click)="attackP2(barisP2, kolomP2)">Place</button>
 </ng-template>
 
 <br/>
 <br/>
 <p>BOARD</p>
 <div *ngFor="let count of board">
-  <span *ngFor="let count2 of count">
+	<span *ngFor="let count2 of count">
     {{count2}}
   </span>
 </div>
+
+<p> {{winner}}</p>
