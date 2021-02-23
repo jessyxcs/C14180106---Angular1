@@ -20,10 +20,12 @@ export class AppComponent  {
   kolomP2 : number;
 
   attackP1(barisP1: number, kolomP1: number){
-
+    this.board[barisP1][kolomP1] = "1"
+    this.turn = false;
   }
 
   attackP2(barisP2: number, kolomP2: number){
-
+    this.board[barisP2][kolomP2] = "0"
+    this.turn = true;
   }
 }
