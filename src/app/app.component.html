@@ -1,4 +1,23 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<h1> Game </h1>
+
+<p>Player 1 = 1</p>
+<p>Player 2 = 2</p>
+
+<!-- PLAYER INPUT -->
+<ng-template *ngIf="turn; then templateP1; else templateP2"></ng-template>
+
+<ng-template #templateP1>
+  <br/>
+  <p> PLAYER 1 TURN </p>
+  <input type="number" placeholder="baris" [(ngModel)]="barisP1"/>
+  <input type="number" placeholder="baris" [(ngModel)]="kolomP1"/>
+  <button (click)="attackP1(barisP1, kolomP1)">Place</button>
+</ng-template>
+
+<ng-template #templateP2>
+  <br/>
+  <p> PLAYER 2 TURN </p>
+  <input type="number" placeholder="baris" [(ngModel)]="barisP2"/>
+  <input type="number" placeholder="baris" [(ngModel)]="kolomP2"/>
+  <button (click)="attackP2(barisP2, kolomP2)">Place</button>
+</ng-template>
